@@ -26,28 +26,51 @@ public class Service {
     public Iterable<Nota> findAllNote() { return notaXmlRepo.findAll(); }
 
     public int saveStudent(String id, String nume, int grupa) {
+//        try {
+//            Student student = new Student(id, nume, grupa);
+//            Student result = studentXmlRepo.save(student);
+//
+//            if (result == null) {
+//                return 1;
+//            }
+//        }
+//        catch(NullPointerException v){
+//            return 1;
+//        }
+//        return 0;
         try {
             Student student = new Student(id, nume, grupa);
             Student result = studentXmlRepo.save(student);
-
             if (result == null) {
                 return 1;
             }
+            return 0;
+        }catch(ValidationException ve){
+            System.out.println(ve);
+            return 0;
         }
-        catch(NullPointerException v){
-            return 1;
-        }
-        return 0;
     }
 
     public int saveTema(String id, String descriere, int deadline, int startline) {
-        Tema tema = new Tema(id, descriere, deadline, startline);
-        Tema result = temaXmlRepo.save(tema);
+//        Tema tema = new Tema(id, descriere, deadline, startline);
+//        Tema result = temaXmlRepo.save(tema);
+//
+//        if (result == null) {
+//            return 1;
+//        }
+//        return 0;
 
-        if (result == null) {
-            return 1;
+        try {
+            Tema tema = new Tema(id, descriere, deadline, startline);
+            Tema result = temaXmlRepo.save(tema);
+            if (result == null) {
+                return 1;
+            }
+            return 0;
+        }catch(ValidationException ve){
+            System.out.println(ve);
+            return 0;
         }
-        return 0;
     }
 
     public int saveNota(String idStudent, String idTema, double valNota, int predata, String feedback) {

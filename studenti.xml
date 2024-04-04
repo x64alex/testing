@@ -16,12 +16,20 @@
         <Nume>MA</Nume>
         <Grupa>312</Grupa>
     </student>
+    <student ID="S9">
+        <Nume>John Doe</Nume>
+        <Grupa>111</Grupa>
+    </student>
     <student ID="cacsac ">
         <Nume>John Doe</Nume>
         <Grupa>111</Grupa>
     </student>
-    <student ID="S1">
-        <Nume>John Doe</Nume>
-        <Grupa>937</Grupa>
+    <student ID="s200">
+        <Nume>acs</Nume>
+        <Grupa>320</Grupa>
+    </student>
+    <student ID="s2">
+        <Nume>acs</Nume>
+        <Grupa>320</Grupa>
     </student>
 </Entitati>
