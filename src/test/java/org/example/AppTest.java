@@ -50,7 +50,7 @@ public class AppTest
         int group = 324;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 0); // Success (0) expected
+        assertEquals(result, 1); // Success (1) expected
     }
 
     public void testCase2() {
@@ -59,7 +59,7 @@ public class AppTest
         int group = 102;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase3() {
@@ -68,7 +68,7 @@ public class AppTest
         int group = 203;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase4() {
@@ -77,7 +77,7 @@ public class AppTest
         int group = 203;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase5() {
@@ -86,7 +86,7 @@ public class AppTest
         int group = 320;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase6() {
@@ -95,7 +95,7 @@ public class AppTest
         int group = -102;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase7() {
@@ -104,7 +104,7 @@ public class AppTest
         Integer group = null;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase8() {
@@ -113,7 +113,7 @@ public class AppTest
         int group = 110;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase9() {
@@ -122,25 +122,25 @@ public class AppTest
         int group = 938;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 1); // Failure (1) expected
+        assertEquals(result, 0); // Failure (0) expected
     }
 
     public void testCase10() {
-        String id = "S1";
+        String id = "S2";
         String name = "John Doe";
         int group = 111;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 0); // Success (0) expected
+        assertEquals(result, 1); // Success (1) expected
     }
 
     public void testCase11() {
-        String id = "S1";
+        String id = "S3";
         String name = "John Doe";
         int group = 937;
 
         int result = validateStudent(id, name, group);
-        assertEquals(result, 0); // Success (0) expected
+        assertEquals(result, 1); // Success (1) expected
     }
 
     private int validateStudent(String id, String name, Integer group) {
@@ -148,7 +148,7 @@ public class AppTest
             return service.saveStudent(id, name, group);
         } catch(NullPointerException n){
             System.out.println(n);
-            return 1;
+            return 0;
         }
     }
 
